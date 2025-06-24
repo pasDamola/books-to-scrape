@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.env
+bookscraper/
+output.json
+output.csv
+books.db
