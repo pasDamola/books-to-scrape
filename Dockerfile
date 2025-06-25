@@ -1,8 +1,18 @@
 FROM mcr.microsoft.com/playwright/python:latest
-# Use root user (disable sandbox) or create non-root per Playwright guidance
-RUN pip install --no-cache-dir sqlalchemy
-WORKDIR /app
-COPY . /app
-# Install Playwright browsers
+
+# Install dependencies
+RUN pip install --no-cache-dir \
+    sqlalchemy \
+    playwright
+
+# Install browsers and dependencies
 RUN playwright install --with-deps
+
+# Set working directory
+WORKDIR /app
+
+# Copy project files into container
+COPY . /app
+
+# Run the CLI scraper as default command
 CMD ["python", "-m", "scraper.cli", "--max-pages", "3", "--output-format", "json"]
