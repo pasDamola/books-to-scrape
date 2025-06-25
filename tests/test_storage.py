@@ -2,7 +2,7 @@ import os
 import json
 import csv
 from scraper.storage import save_to_json, save_to_csv, save_to_sqlite
-from sqlalchemy import create_engine, inspect
+from sqlalchemy import create_engine, inspect, text
 
 sample_data = [
     {"title": "Book A", "price": 10.99, "rating": "Four", "url": "https://example.com/book-a"},
@@ -40,6 +40,6 @@ def test_save_to_sqlite(tmp_path):
     assert "books" in inspector.get_table_names()
 
     with engine.connect() as conn:
-        result = conn.execute("SELECT COUNT(*) FROM books")
+        result = conn.execute(text("SELECT COUNT(*) FROM books"))
         count = result.fetchone()[0]
         assert count == 2
