@@ -25,6 +25,12 @@ This is a Python CLI tool to scrape book data from [Books to Scrape](https://boo
 
 This will scrape the first 5 pages in headless mode and save results to output.json
 
+4. **Testing**:
+Run the unit tests with
+    ```bash
+    pytest
+These tests cover argument parsing, rating parsing, and output formatting.
+
 **Output**
  - output.json or output.csv: Scraped data in the chosen format.
  - books.db: (if --db used) SQLite database with a books table.
@@ -53,15 +59,7 @@ A sample JSON output would look like:
             "url": "https://books.toscrape.com/soumission_998/index.html"
         }
     ]
-    ```
 
-**Testing**:
-Run the unit tests with
-    ```bash
-    pytest
-
-
-These tests cover argument parsing, rating parsing, and output formatting.
 
 
 **Explanation of Anti-Bot Techniques**
