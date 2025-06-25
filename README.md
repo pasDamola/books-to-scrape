@@ -60,15 +60,15 @@ These tests cover argument parsing, rating parsing, and output formatting.
     "url": "https://books.toscrape.com/soumission_998/index.html"
   }
 ]
+```
 
 
 
-
-**Explanation of Anti-Bot Techniques**
+## Explanation of Anti-Bot Techniques used in the project
 
 To reduce detection, I mimiced human browsing: inserting pauses between actions makes requests erratic as a person would behave
- - We also rotate User-Agent strings on each browser context to appear as different devices/browsers
+ - I also rotated User-Agent strings on each browser context to appear as different devices/browsers
  - Using a persistent browser context (or reusing the same context) preserves cookies across page loads, simulating a continuous user session
  - These methods help keep the scraper under the radar of anti-bot systems. Playwright’s async API further enables efficient scraping of multiple pages in sequence
  - Each component (scraping, storage, CLI) is separated to keep the codebase clean and testable, following modular design principles
- - We include unit tests (with pytest) for key functions (e.g. parsing star ratings, writing output) to ensure correctness. The provided Dockerfile allows running the tool in a container that already has Playwright’s browsers installed, which simplifies deployment and ensures consistent behavior across environments. This complete implementation meets all requirements: it scrapes at least 3 pages by default, handles pagination and missing pages gracefully, uses human-like delays and UA rotation to avoid blocks, and stores results in JSON/CSV (plus SQLite)
+ - I included unit tests (with pytest) for key functions (e.g. parsing star ratings, writing output) to ensure correctness. The provided Dockerfile allows running the tool in a container that already has Playwright’s browsers installed, which simplifies deployment and ensures consistent behavior across environments. This complete implementation meets all requirements: it scrapes at least 3 pages by default, handles pagination and missing pages gracefully, uses human-like delays and UA rotation to avoid blocks, and stores results in JSON/CSV (plus SQLite)
