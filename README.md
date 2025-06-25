@@ -3,7 +3,7 @@
 This is a Python CLI tool to scrape book data from [Books to Scrape](https://books.toscrape.com). It extracts Title, Price, Star rating, and the product URL for each book, up to a specified number of pages. The tool uses Playwright for browser automation with anti-detection techniques.
 
 ## Features
-- Randomized wait times and rotating User-Agent to mimic human browsing:contentReference[oaicite:15]{index=15}:contentReference[oaicite:16]{index=16}.
+- Randomized wait times and rotating User-Agent to mimic human browsing
 - Optional headless mode (via `--headless`) for running without opening a visible browser.
 - Saves output as JSON or CSV (`--output-format`), and can also store data in SQLite (`--db`) using SQLAlchemy.
 - Modular code structure for maintainability.
