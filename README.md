@@ -7,7 +7,7 @@ This is a Python CLI tool to scrape book data from [Books to Scrape](https://boo
 - Optional headless mode (via `--headless`) for running without opening a visible browser.
 - Saves output as JSON or CSV (`--output-format`), and can also store data in SQLite (`--db`) using SQLAlchemy.
 - Modular code structure for maintainability.
-- Dockerfile included for easy deployment:contentReference[oaicite:17]{index=17}.
+- Dockerfile included for easy deployment.
 
 ## Setup
 
