@@ -37,28 +37,30 @@ These tests cover argument parsing, rating parsing, and output formatting.
  - The JSON/CSV columns are: title, price, rating, url.
 
 
-A sample JSON output would look like:
-    ```json
-    [
-        {
-            "title": "A Light in the Attic",
-            "price": 51.77,
-            "rating": "Three",
-            "url": "https://books.toscrape.com/a-light-in-the-attic_1000/index.html"
-        },
-        {
-            "title": "Tipping the Velvet",
-            "price": 53.74,
-            "rating": "One",
-            "url": "https://books.toscrape.com/tipping-the-velvet_999/index.html"
-        },
-        {
-            "title": "Soumission",
-            "price": 50.10,
-            "rating": "One",
-            "url": "https://books.toscrape.com/soumission_998/index.html"
-        }
-    ]
+## 📄 Sample Output (JSON)
+
+```json
+[
+  {
+    "title": "A Light in the Attic",
+    "price": 51.77,
+    "rating": "Three",
+    "url": "https://books.toscrape.com/a-light-in-the-attic_1000/index.html"
+  },
+  {
+    "title": "Tipping the Velvet",
+    "price": 53.74,
+    "rating": "One",
+    "url": "https://books.toscrape.com/tipping-the-velvet_999/index.html"
+  },
+  {
+    "title": "Soumission",
+    "price": 50.10,
+    "rating": "One",
+    "url": "https://books.toscrape.com/soumission_998/index.html"
+  }
+]
+
 
 
 
