@@ -32,8 +32,6 @@ This will scrape the first 5 pages in headless mode and save results to output.j
 
 
 A sample JSON output would look like:
-    ```json
-
     [
         {
             "title": "A Light in the Attic",
@@ -58,7 +56,8 @@ A sample JSON output would look like:
 **Testing**:
 Run the unit tests with:
     ```bash
-    pytest
+      pytest
+
 These tests cover argument parsing, rating parsing, and output formatting.
 
 
