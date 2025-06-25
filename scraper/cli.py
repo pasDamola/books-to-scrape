@@ -7,7 +7,7 @@ from .utils import setup_logger
 
 logger = setup_logger("cli")
 
-def parse_args():
+def parse_args(args=None):
     parser = argparse.ArgumentParser(description="Scrape books from books.toscrape.com")
     parser.add_argument("--max-pages", type=int, default=3,
                         help="Maximum number of pages to scrape")
@@ -17,7 +17,7 @@ def parse_args():
                         help="Run browser in headless mode")
     parser.add_argument("--db", action="store_true",
                         help="Also save results to SQLite database")
-    return parser.parse_args()
+    return parser.parse_args(args)
 
 async def run_scraper(args):
     start_url = "https://books.toscrape.com/"
