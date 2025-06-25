@@ -31,6 +31,13 @@ Run the unit tests with
     pytest
 These tests cover argument parsing, rating parsing, and output formatting.
 
+5. **Running with Docker**
+    ```bash
+    docker build -t book-scraper . - (This will build the Docker image)
+    docker run --rm book-scraper  - (This will: Run the scraper with default setting --max-pages 3, --output-format json, --headless and Save the output to output.json in the container)
+
+
+
 **Output**
  - output.json or output.csv: Scraped data in the chosen format.
  - books.db: (if --db used) SQLite database with a books table.
@@ -72,3 +79,6 @@ To reduce detection, I mimiced human browsing: inserting pauses between actions 
  - These methods help keep the scraper under the radar of anti-bot systems. Playwright’s async API further enables efficient scraping of multiple pages in sequence
  - Each component (scraping, storage, CLI) is separated to keep the codebase clean and testable, following modular design principles
  - I included unit tests (with pytest) for key functions (e.g. parsing star ratings, writing output) to ensure correctness. The provided Dockerfile allows running the tool in a container that already has Playwright’s browsers installed, which simplifies deployment and ensures consistent behavior across environments. This complete implementation meets all requirements: it scrapes at least 3 pages by default, handles pagination and missing pages gracefully, uses human-like delays and UA rotation to avoid blocks, and stores results in JSON/CSV (plus SQLite)
+
+
+ 
